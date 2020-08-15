@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    background: steelblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 10px 50px 10px;
+}
+
+.logo{
+    font-style: normal;
+    font-size: 30px;
+}
+.logo a {
+    text-decoration: none;
+    color: #fff;
+
+}
+ul {
+    display: flex;
+    list-style: none;
+    margin-right: 10px;
+}
+
+li {
+    margin: 5px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}

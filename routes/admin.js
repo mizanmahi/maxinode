@@ -1,17 +1,21 @@
-const express = require('express');
+// core modules
+const path = require('path');
 
+// third party modules
+const express = require('express');
 const router = express.Router();
 
+const addedFood = [];
+
 router.get('/add-product',(req, res, next) => {
-    res.send(`<form action="/admin/product" method="POST">
-    <label for="prodName">Add an item</label>
-    <input type="text" name="title">
-    <button type="submit">Add</button>
-    </form>`);
+    res.sendFile(path.join(__dirname, '..', 'views', 'admin.html'))
 })
 
 router.post('/product',  (req, res, next) => {
-    res.send(req.body)
+    console.log(req.body, 'seeing');
+    addedFood.push({title: req.body.title})
+    res.redirect('/')
+
 })
 
 module.exports = router;

@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -8,6 +9,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true})); // body parser to parse the req body
+app.use(express.static(path.join(__dirname, 'public')))
 
 // filtering routes
 app.use('/admin', adminRouter);
