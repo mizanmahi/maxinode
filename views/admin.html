@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodHub</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Add Products</title>
 </head>
 <body>
     <header>
-        <div class="logo"><a href="#">FoodHub</a></div>
         <nav>
-            <ul><li><a href="">Home</a></li></ul>
-            <ul><li><a href="">Add Food</a></li></ul>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add-product">Add Food</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Add Your Food</h2>
-        <form action="/admin/product" method="POST">
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title">
-            <button type="submit">Add</button>
-        </form>
+        <div class="form form-group">
+            <form action="/product" method="POST" >
+                <label for="title">Title</label>
+                <input type="text"  name="title" id="title" class="form-control" placeholder="Type foods name..">
+                <button type="submit" class="btn btn-success mt-3">Add</button>
+            </form>
+        </div>
     </main>
 
 </body>

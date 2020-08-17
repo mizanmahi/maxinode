@@ -5,8 +5,12 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 
+// custom modules
+const adminRouter = require('./admin')
+
 router.get('/',(req, res, next) => {
-    res.sendFile(path.join(__dirname, '..', 'views', 'shop.html'))
+    res.render('shop')
+    console.log(adminRouter.addedFood);
 })
 
 module.exports = router;
