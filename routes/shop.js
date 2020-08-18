@@ -9,7 +9,11 @@ const router = express.Router();
 const adminRouter = require('./admin')
 
 router.get('/',(req, res, next) => {
-    res.render('shop')
+    res.render('shop', {
+        pageTitle: 'FoodHub',
+        prods: adminRouter.addedFood,
+        path: '/'
+    })
     console.log(adminRouter.addedFood);
 })
 
