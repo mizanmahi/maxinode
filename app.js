@@ -6,7 +6,7 @@ const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
 
 const app = express();
-app.set('view engine', 'pug')
+app.set('view engine', 'ejs')
 app.set('views', './views')
 const PORT = 3000;
 
