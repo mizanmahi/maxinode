@@ -1,25 +1,15 @@
 // core modules
 const path = require('path');
+const productController = require('../controller/product')
 
 // third party modules
 const express = require('express');
 const router = express.Router();
 
-const addedFood = [];
 
-router.get('/add-product',(req, res, next) => {
-    res.render('add-product', {
-        path: '/admin/add-product',
-        pageTitle: 'Add Product'
-    });
-})
 
-router.post('/product',  (req, res, next) => {
-    addedFood.push({title: req.body.title})
-    console.log('aya tha');
-    res.redirect('/')
+router.get('/add-product', productController.getAddProductPage)
 
-})
+router.post('/product',  productController.postProductPage)
 
-exports.router = router;
-exports.addedFood = addedFood;
+module.exports = router;
