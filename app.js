@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 
 const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
+const productRouter = require('./routes/product')
+const indexRouter = require('./routes/index')
 
 const errorController = require('./controller/error')
 
@@ -20,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'public'))) // static file serving
 
 app.use('/admin', adminRouter); // filtering routes
 app.use(shopRouter);
+
+app.use(productRouter)
 
 // 404 page handler
 app.use(errorController.getErrorPage)
