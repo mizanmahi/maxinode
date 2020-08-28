@@ -1,14 +1,15 @@
-<%- include('./partials/head') %>
+<%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/product.css">
 </head>
 
 <body>
-    <%- include('./partials/navigation') %>
+    <%- include('../partials/navigation.ejs') %>
 
     <main>
         <% if (prods.length > 0) { %>
             <h1>My Products</h1>
         <p>List of all the products...</p>
+        <div class="food_container">
         <% for (let product of prods) { %>
             <div class="grid">
                 <article class="card product-item">
@@ -16,7 +17,7 @@
                         <h1 class="product__title"><%= product.title %></h1>
                     </header>
                     <div class="card__image">
-                        <img src="https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png" alt="A Book">
+                        <img src="https://images.media-allrecipes.com/userphotos/5605026.jpg" alt="A Book">
                     </div>
                     <div class="card__content">
                         <h2 class="product__price">$19.99</h2>
@@ -28,6 +29,7 @@
                 </article>
             </div>
             <% } %>
+        </div>
             <% } else { %>
                 <h1>No available product</h1>
             <% } %>

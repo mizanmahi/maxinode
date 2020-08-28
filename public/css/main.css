@@ -51,6 +51,11 @@ main {
   color: #ffeb3b;
 }
 
+.food_container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
